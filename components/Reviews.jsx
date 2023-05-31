@@ -20,14 +20,18 @@ const Reviews = () => {
           {reviews.map((review) => {
             return (
               <li key={review.review_id}>
-                <p>{review.title}</p>
-                <p>{review.designer}</p>
-                <p>{review.owner}</p>
-                <p>{review.review_img_url}</p>
-                <p>{review.category}</p>
-                <p>{review.created_at}</p>
-                <p>{review.votes}</p>
-                <p>{review.comment_count}</p>
+                <div className='card'>
+                <div className="container">  
+                <p>Game Title: {review.title}</p>
+                <p>Game Designer: {review.designer}</p>
+                <p>User: {review.owner}</p>
+                <p>Category: {review.category}</p>
+                <p>Date Created: {review.created_at}</p>
+                <p>Votes: {review.votes}</p>
+                <p>Number Of Comments: {review.comment_count}</p>
+                </div>
+                <img src={review.review_img_url}></img>
+                </div>
               </li>
             );
           })}
